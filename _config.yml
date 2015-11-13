@@ -1,0 +1,20 @@
+# Site settings
+url: "https://opendevelopmentmethod.org"
+domain: opendevelopmentmethod.org
+
+title: Open Development Methodology
+description: >
+
+author:
+  name: Ahmad Nassri
+  link: https://www.ahmadnassri.com/about
+  facebook_id: 227304446
+
+links:
+  email: info@opendevelopmentmethod.org
+  github: https://github.com/OpenDevelopmentMethod/discussion
+
+# Build settings
+markdown: kramdown
+timezone: America/Toronto
+permalink: pretty

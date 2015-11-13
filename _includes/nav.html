@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default navbar-header navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/"><img src="/images/logo.png"/> Open Development Method</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        {% for item in site.data.nav %}
+          <li {% if page.url == item.link %}class="active"{% endif %}><a href="{{ item.link }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
