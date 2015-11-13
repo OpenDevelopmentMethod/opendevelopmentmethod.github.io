@@ -1,1 +1,1 @@
-Visit website at: [https://opendevelopmentmethod.org](OpenDevelopmentMethod.org)
+Visit website at: [OpenDevelopmentMethod.org](https://opendevelopmentmethod.org)
