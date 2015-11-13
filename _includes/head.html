@@ -1,6 +1,6 @@
 {% capture description %}{{ site.description }}{% endcapture %}
 {% capture title %}{% if page.title | escape %}{{ page.title }} | {% endif %}{{ site.title }}{% endcapture %}
-{% capture thumbnail %}{% if page %}{{ page_url }}{% else %}/images/logo.png{% endif %}{% endcapture %}
+{% capture share %}{% if page %}{{ page_url }}{% else %}/images/open-development-method.jpg{% endif %}{% endcapture %}
 
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
   <meta charset="utf-8"/>
@@ -16,7 +16,7 @@
 
   <meta itemprop="name" content="{{ title }}"/>
   <meta itemprop="description" content="{{ description }}">
-  <meta itemprop="image" content="{{ site.url | append: thumbnail }}"/>
+  <meta itemprop="image" content="{{ site.url | append: share }}"/>
 
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
@@ -24,7 +24,7 @@
   <meta property="og:description" content="{{ description }}"/>
   <meta property="og:site_name" content="{{ site.title }}"/>
   <meta property="og:url" content="{{ site.url | append: page_url }}"/>
-  <meta property="og:image" content="{{ site.url | append: thumbnail }}"/>
+  <meta property="og:image" content="{{ site.url | append: share }}"/>
   <meta property="fb:admins" content="{{ site.author.facebook_id }}"/>
   <meta property="article:author" content="{{ site.author.facebook_id }}"/>
   {% if page.date %}<meta property="article:published_time" content="{{ page.date | date: "%F" }}"/>{% endif %}
@@ -35,13 +35,13 @@
     {% endfor %}
   {% endif %}
 
-  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{{ title }}"/>
   <meta name="twitter:description" content="{{ description }}"/>
   <meta name="twitter:domain" content="{{ site.domain }}"/>
   <meta name="twitter:creator" content="@{{ site.author.twitter }}"/>
   <meta name="twitter:url" content="{{ site.url | append: page_url }}"/>
-  <meta name="twitter:image:src" content="{{ site.url | append: thumbnail }}"/>
+  <meta name="twitter:image:src" content="{{ site.url | append: share }}"/>
 
   <meta name="msvalidate.01" content="1531230360BB8F364EDBA26FCF41604D"/>
   <meta name="google-site-verification" content="0KoQy3aYyaYLvvA8sZ1BBj8MRnfR7H2PEnGIPyglVhU"/>
