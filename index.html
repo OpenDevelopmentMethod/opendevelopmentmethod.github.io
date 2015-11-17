@@ -1,5 +1,48 @@
 ---
 layout: default
+
+resources:
+  - title: Presentation @ Tech Toronto
+    link: https://www.youtube.com/watch?v=VumNgZYEOHM
+    image: /images/resources/tech-toronto.jpg
+    links: 
+      - title: Video
+        href: https://www.youtube.com/watch?v=VumNgZYEOHM
+        icon: fa-youtube-play
+
+      - title: Slides
+        href: https://speakerdeck.com/ahmadnassri/open-development-methodology
+        icon: fa-bullhorn
+
+  - title: Article @ OpenSource.com
+    link: http://opensource.com/business/15/11/open-development-method
+    image: /images/resources/opensource-com.png
+    links:
+      - title: Read
+        href: http://opensource.com/business/15/11/open-development-method
+    
+      - title: Comment
+        href: http://opensource.com/business/15/11/open-development-method#comments
+    
+  - title: Full Stack Toronto 2015
+    link: http://fsto.co/
+    image: /images/resources/fsto.png
+    links:
+      - title: Attend
+        href: http://fsto.co/
+    
+      - title: Watch
+        href: http://fstoconf15-videos.fsto.co/
+
+  - title: heading">Discuss @ Github
+    link: https://github.com/OpenDevelopmentMethod/discussion
+    image: /images/resources/github.png
+    links:
+      - title: Ask a question
+        href: https://github.com/OpenDevelopmentMethod/discussion/issues/new
+    
+      - title: Read questions
+        href: https://github.com/OpenDevelopmentMethod/discussion/issues?q=is%3Aissue
 ---
 
 <div class="page home">
@@ -118,64 +161,23 @@ layout: default
   </header>
 
   <div class="row">
-    <div class="col-sm-6">
-      <div class="media">
-        <div class="media-left">
-          <a href="https://www.youtube.com/watch?v=VumNgZYEOHM">
-            <img class="media-object thumbnail" src="/images/resources/tech-toronto.jpg"/>
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Presentation @ Tech Toronto</h4>
-          <p><a href="https://speakerdeck.com/ahmadnassri/open-development-methodology"><span class="fa fa-fw fa-bullhorn"></span> Slides</a></p>
-          <p><a href="https://www.youtube.com/watch?v=VumNgZYEOHM"><span class="fa fa-fw fa-youtube-play"></span> Video</a></p>
-        </div>
-      </div>
-    </div>
+    {% for resource in page.resources %}
+      <div class="col-sm-6">
+        <div class="media">
+          <div class="media-left">
+            <a href="{{ resource.link }}">
+              <img class="media-object thumbnail" src="{{ resource.image }}"/>
+            </a>
+          </div>
 
-    <div class="col-sm-6">
-      <div class="media">
-        <div class="media-left">
-          <a href="http://opensource.com/business/15/11/open-development-method">
-            <img class="media-object thumbnail" src="/images/resources/opensource-com.png"/>
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Article @ OpenSource.com</h4>
-          <p><a href="http://opensource.com/business/15/11/open-development-method"><span class="fa fa-fw fa-eye"></span> Read</a></p>
-          <p><a href="http://opensource.com/business/15/11/open-development-method#comments"><span class="fa fa-fw fa-pencil"></span> Comment</a></p>
+          <div class="media-body">
+            <h4 class="media-heading">{{ resource.title }}</h4>
+            {% for link in resource.links %}
+              <p><a href="{{ link.href }}"><span class="fa fa-fw {{ link.icon }}"></span> {{ link.title }}</a></p>
+            {% endfor %}
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="media">
-        <div class="media-left">
-          <a href="http://fsto.co/">
-            <img class="media-object thumbnail" src="/images/resources/fsto.png"/>
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Talk @ Full Stack Toronto 2015</h4>
-          <p><a href="http://fsto.co/"><span class="fa fa-fw fa-calendar-check-o"></span> Attend</a></p>
-          <p><a href="http://fstoconf15-videos.fsto.co/"><span class="fa fa-fw fa-youtube-play"></span> Watch</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="media">
-        <div class="media-left">
-          <a href="https://github.com/OpenDevelopmentMethod/discussion">
-            <img class="media-object thumbnail" src="/images/resources/github.png"/>
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Discuss @ Github</h4>
-          <p><a href="https://github.com/OpenDevelopmentMethod/discussion/issues/new"><span class="fa fa-fw fa-comment-o"></span> Ask a question</a></p>
-          <p><a href="https://github.com/OpenDevelopmentMethod/discussion/issues?q=is%3Aissue"><span class="fa fa-fw fa-eye"></span> Read questions</a></p>
-        </div>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
